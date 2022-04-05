@@ -1,5 +1,4 @@
-# Pluralsight 
-https://app.pluralsight.com/
+# [Pluralsight](https://app.pluralsight.com/)
 
 ### Courses
-- Vue.js Fundamentals
+- Vue.js Fundamentals `5h 41m`
