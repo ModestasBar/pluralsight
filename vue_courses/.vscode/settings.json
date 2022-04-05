@@ -1,0 +1,10 @@
+{
+  "eslint.validate": ["html", "vue", "javascript"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.alwaysShowStatus": true,
+  "eslint.workingDirectories": [
+    {"mode": "auto"}
+  ]
+}
