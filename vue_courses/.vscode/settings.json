@@ -5,6 +5,10 @@
   },
   "eslint.alwaysShowStatus": true,
   "eslint.workingDirectories": [
-    {"mode": "auto"}
-  ]
+    {
+      "mode": "auto"
+    }
+  ],
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true
 }
