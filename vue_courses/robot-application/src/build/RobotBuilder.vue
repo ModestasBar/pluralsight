@@ -37,26 +37,26 @@
       </div>
     </div>
     <div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Robot</th>
-                    <th class="cost">Cost</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="(robot, index) in cart" :key="index">
-                    <td>{{robot.head.title}}</td>
-                    <td class="cost">{{robot.cost}}</td>
-                </tr>
-            </tbody>
-        </table>
+      <table>
+        <thead>
+          <tr>
+            <th>Robot</th>
+            <th class="cost">Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(robot, index) in cart" :key="index">
+            <td>{{ robot.head.title }}</td>
+            <td class="cost">{{ robot.cost }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
 
 <script>
-import parts from '../data/parts';
+import parts from "../data/parts";
 
 function getPreviousValidIndex(index, length) {
   const deprecatedIndex = index - 1;
@@ -69,7 +69,7 @@ function getNextValidIndex(index, length) {
 }
 
 export default {
-  name: 'RobotBuilder',
+  name: "RobotBuilder",
 
   data() {
     return {
@@ -102,19 +102,19 @@ export default {
     decreaseNextHead() {
       this.selectNextHeadIndex = getPreviousValidIndex(
         this.selectNextHeadIndex,
-        parts.heads.length,
+        parts.heads.length
       );
     },
     selectNextLeftArm() {
       this.selectNextLeftArmIndex = getNextValidIndex(
         this.selectNextLeftArmIndex,
-        parts.arms.length,
+        parts.arms.length
       );
     },
     decreaseNextLeftArm() {
       this.selectNextLeftArmIndex = getPreviousValidIndex(
         this.selectNextLeftArmIndex,
-        parts.arms.length,
+        parts.arms.length
       );
     },
     selectNextTorso() {
@@ -123,41 +123,42 @@ export default {
     decreaseNextTorso() {
       this.selectNextTorsoIndex = getPreviousValidIndex(
         this.selectNextTorsoIndex,
-        parts.torsos.length,
+        parts.torsos.length
       );
     },
     selectNextRightArm() {
       this.selectNextRightArmIndex = getNextValidIndex(
         this.selectNextRightArmIndex,
-        parts.arms.length,
+        parts.arms.length
       );
     },
     decreaseNextRightArm() {
       this.selectNextRightArmIndex = getPreviousValidIndex(
         this.selectNextRightArmIndex,
-        parts.arms.length,
+        parts.arms.length
       );
     },
     selectNextBottom() {
       this.selectNextBottomIndex = getNextValidIndex(
         this.selectNextBottomIndex,
-        parts.bases.length,
+        parts.bases.length
       );
     },
     decreaseNextBottom() {
       this.selectNextBottomIndex = getPreviousValidIndex(
         this.selectNextBottomIndex,
-        parts.bases.length,
+        parts.bases.length
       );
     },
     addToCart() {
       const robot = this.selectedRobots;
       console.log(robot);
-      const cost = robot.head.cost
-        + robot.leftArm.cost
-        + robot.rightArm.cost
-        + robot.torso.cost
-        + robot.base.cost;
+      const cost =
+        robot.head.cost +
+        robot.leftArm.cost +
+        robot.rightArm.cost +
+        robot.torso.cost +
+        robot.base.cost;
 
       this.cart = [...this.cart, { ...robot, cost }];
     },
@@ -165,16 +166,18 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .part {
   position: relative;
   width: 165px;
   height: 165px;
   border: 3px solid #aaa;
+
+  img {
+    width: 165px;
+  }
 }
-.part img {
-  width: 165px;
-}
+
 .top-row {
   display: flex;
   justify-content: space-around;
@@ -275,12 +278,13 @@ export default {
   padding: 3px;
   font-size: 16px;
 }
-td, th {
-    text-align: left;
-    padding: 5px;
-    padding-right: 20px;
+td,
+th {
+  text-align: left;
+  padding: 5px;
+  padding-right: 20px;
 }
-.cost{
-    text-align: right;
+.cost {
+  text-align: right;
 }
 </style>
