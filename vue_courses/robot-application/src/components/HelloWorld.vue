@@ -1,20 +1,15 @@
 <template>
-  <div>
-    hello world component
-  </div>
+  <div>hello world component</div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
 
   props: {
     msg: String,
   },
-
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
